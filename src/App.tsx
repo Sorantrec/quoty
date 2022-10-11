@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import getImages from "./getImages.js";
+import { Header, Main } from './App.styled';
 
 export default function App() {
   const [quotes, setQuotes] = useState<any>([]);
@@ -12,12 +13,16 @@ export default function App() {
     setQuotes(jsonResult);
   }
 
+  const getNewQuote = () => {
+    setRandomQuote(quotes[Math.floor(quotes.length * Math.random())]);
+  }
+
   useEffect(() => {
     getQuotes();
   }, []);
 
   useEffect(() => {
-    setRandomQuote(quotes[Math.floor(quotes.length * Math.random())]);
+    getNewQuote()
   }, [quotes.length]);
 
   const RenderRandomQuote = () => {
@@ -28,17 +33,25 @@ export default function App() {
       if (url) setImgUrl(url);
     });
     return (
-      <>
-        <p>{text ?? ""}</p>
-        <p>{author ?? "No author"}</p>
+      <section>
+        <div>
+          <h3>{text ?? ""}</h3>
+          <p>{author ?? "No author"}</p>
+          <button onClick={() => getNewQuote()}>Get new quote</button>
+        </div>
         <img src={imgUrl} alt="" />
-      </>
+      </section>
     );
   };
 
   return (
     <div className="App">
-      <RenderRandomQuote />
+      <Header>
+        <h1>Quoty?</h1>
+      </Header>
+      <Main>
+        <RenderRandomQuote />
+      </Main>
     </div>
   );
 }
