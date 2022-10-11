@@ -39,7 +39,7 @@ export default function App() {
           <p>{author ?? "No author"}</p>
           <button onClick={() => getNewQuote()}>Get new quote</button>
         </div>
-        <img src={imgUrl} alt="" />
+        {imgUrl.includes('undefined') ? null : <img src={imgUrl} alt="" />}
       </section>
     );
   };
