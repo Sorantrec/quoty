@@ -12,7 +12,7 @@ export default async function getImages(author) {
     special: "FilePath",
   };
 
-  url = url + "?origin=*";
+  url = `${url}?origin=*`;
   Object.keys(params).forEach(function (key) {
     url += "&" + key + "=" + params[key];
   });
@@ -20,7 +20,7 @@ export default async function getImages(author) {
   try {
     const res = await fetch(url);
     const resJson = await res.json();
-    var page = await resJson.query.pages[0];
+    const page = await resJson.query.pages[0];
     const pageImage = page.pageimage;
     const imgUrl = `https://en.wikipedia.org/wiki/Special:FilePath/${pageImage}`;
     return imgUrl;
