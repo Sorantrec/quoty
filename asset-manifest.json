@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/quoty/static/css/main.6bc7bd41.css",
-    "main.js": "/quoty/static/js/main.7380e066.js",
+    "main.js": "/quoty/static/js/main.b359b845.js",
+    "static/js/412.15f77cf0.chunk.js": "/quoty/static/js/412.15f77cf0.chunk.js",
     "static/js/787.177bc0ed.chunk.js": "/quoty/static/js/787.177bc0ed.chunk.js",
     "index.html": "/quoty/index.html",
     "main.6bc7bd41.css.map": "/quoty/static/css/main.6bc7bd41.css.map",
-    "main.7380e066.js.map": "/quoty/static/js/main.7380e066.js.map",
+    "main.b359b845.js.map": "/quoty/static/js/main.b359b845.js.map",
+    "412.15f77cf0.chunk.js.map": "/quoty/static/js/412.15f77cf0.chunk.js.map",
     "787.177bc0ed.chunk.js.map": "/quoty/static/js/787.177bc0ed.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6bc7bd41.css",
-    "static/js/main.7380e066.js"
+    "static/js/main.b359b845.js"
   ]
 }
