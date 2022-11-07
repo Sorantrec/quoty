@@ -2,5 +2,5 @@ import { ImageBackground } from '../App/index.styled';
 import IAuthorImage from './IAuthorImage';
 
 export default function AuthorImage({ url }: IAuthorImage) {
-  return (<ImageBackground style={{ backgroundImage: `url('${url}')` }} />)
+  return (<ImageBackground data-testid='image-background-id' style={{ backgroundImage: `url('${url}')` }} />)
 }
