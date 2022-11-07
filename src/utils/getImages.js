@@ -4,12 +4,10 @@ export default async function getImages(author) {
 
   const params = {
     action: "query",
-    prop: "pageimages|pageterms",
-    pagetermsPiprop: "original",
+    prop: "pageimages|pageterms&piprop=thumbnail&pithumbsize=430",
     titles: title,
     format: "json",
     formatversion: 2,
-    special: "FilePath",
   };
 
   url = `${url}?origin=*`;
@@ -21,8 +19,10 @@ export default async function getImages(author) {
     const res = await fetch(url);
     const resJson = await res.json();
     const page = await resJson.query.pages[0];
-    const pageImage = page.pageimage;
-    const imgUrl = `https://en.wikipedia.org/wiki/Special:FilePath/${pageImage}`;
+    const thumbnail = page.thumbnail?.source;
+    if (thumbnail === undefined) return undefined;
+
+    const imgUrl = thumbnail;
     return imgUrl;
   } catch (error) {
     console.log(error);
